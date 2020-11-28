@@ -11,29 +11,26 @@ function randomNumGen(){
   return counter
 };
 
+function yourUp(){
+  document.getElementById("h3").innerHTML = hsaTeam[guessWho] + " You're Up!" ;
+  document.getElementById('buttonCall').style.display='none'
+};
+
 function retro(){
   if(hsaTeam.length === 0){
     hsaTeam = ranRetro;
     ranRetro = [];
     var guessWho = randomNumGen();
-    document.getElementById("h3").innerHTML = hsaTeam[guessWho] + " You're Up!" ;
-    document.getElementById('buttonCall').style.display='none'
+    yourUp();
     ranRetro.push(hsaTeam[guessWho]);
     hsaTeam.splice(guessWho, 1);
-    console.log("I'm equal to 0 therefore I reset hsaTeam");
-    console.log(hsaTeam);
-    console.log(ranRetro);
   } else {
     var guessWho = randomNumGen();
-    document.getElementById("h3").innerHTML = hsaTeam[guessWho] + " You're Up!" ;
-    document.getElementById('buttonCall').style.display='none'
+    yourUp();
     ranRetro.push(hsaTeam[guessWho]);
     hsaTeam.splice(guessWho, 1);
-    console.log("I'm not there yet, keep rolling");
-    console.log(hsaTeam);
-    console.log(ranRetro);
   }
-}
+};
 
 bCall.addEventListener('click', function(){
     retro();
@@ -45,6 +42,5 @@ document.getElementById("reset").addEventListener('click', function(){
   counter;
   document.getElementById("h3").innerHTML = "[==================]" ;
   document.getElementById('buttonCall').style.display='inline-block	'
-})
+});
 
-//testings
