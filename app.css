@@ -1,0 +1,15 @@
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
+
+
+.centerC {
+    text-align: center;
+}
+
+
+.buttonS{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
